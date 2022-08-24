@@ -44,7 +44,6 @@ void draw()
   ellipse(580,280,20,20);
   //eyes
   g.stroke = true;
-  arc(0,0,200,200,0,PI/4);
   noFill();
   arc(400,500,200,200,0,PI/4);
   noFill();
