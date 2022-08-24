@@ -47,6 +47,6 @@ void draw()
   noFill();
   arc(400,500,200,200,0,PI/4);
   noFill();
-  arc(600,500,200,200,(3*PI)/4,PI);
+  arc(600,500,200,200,3*PI/4,PI);
   //mouth
 }
