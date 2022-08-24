@@ -36,12 +36,6 @@ void draw()
   //fill(#3E3324);
   rect(480,460,40,40);
   //nose
-  g.stroke = true;
-  noFill();
-  arc(400,500,200,200,0,PI/4);
-  noFill();
-  arc(600,500,200,200,(3*PI)/4,PI);
-  //mouth
   fill(#000000);
   ellipse(410,300,75,100);
   ellipse(590,300,75,100);
@@ -49,4 +43,10 @@ void draw()
   ellipse(400,280,20,20);
   ellipse(580,280,20,20);
   //eyes
+  g.stroke = true;
+  noFill();
+  arc(400,500,200,200,0,PI/4);
+  noFill();
+  arc(600,500,200,200,(3*PI)/4,PI);
+  //mouth
 }
