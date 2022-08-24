@@ -42,11 +42,11 @@ void draw()
   noFill();
   arc(600,500,200,200,(3*PI)/4,PI);
   //mouth
-   fill(#000000);
-   ellipse(410,300,75,100);
-   ellipse(590,300,75,100);
-   fill(#FFFFFF);
-   ellipse(400,280,20,20);
-   ellipse(580,280,20,20);
-   //eyes
+  fill(#000000);
+  ellipse(410,300,75,100);
+  ellipse(590,300,75,100);
+  fill(#FFFFFF);
+  ellipse(400,280,20,20);
+  ellipse(580,280,20,20);
+  //eyes
 }
