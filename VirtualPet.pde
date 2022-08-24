@@ -10,7 +10,7 @@ void draw()
   fill(#FFEB08);
   ellipse(0,0,500,500);
   fill(#31B464);
-  rect(0,750,1000,500);
+  rect(0,750,1000,250);
   fill(#816B40);
   ellipse(500,1000,600,1000);
   fill(#3E3324);
@@ -34,6 +34,10 @@ void draw()
   ellipse(410,300,75,100);
   fill(#000000);
   ellipse(590,300,75,100);
+  fill(#FFFFFF);
+  ellipse(400,280,20,20);
+  fill(#FFFFFF);
+  ellipse(580,280,20,20);
   g.stroke = true;
   noFill();
   arc(400,500,200,200,0,PI/4);
