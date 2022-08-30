@@ -1,16 +1,30 @@
+import processing.serial.*;
+import cc.arduino.*;
+Arduino arduino;
+
 void setup()
 {
   size (1000,1000);
+  arduino = new Arduino(this, Arduino.list()[0], 57600);
 }
 
 void draw()
 {
+  int rButton = arduino.analogRead(1);
   noStroke();
-  background(#00E7ED);
-  fill(#FFEB08);
-  ellipse(0,0,500,500);
-  fill(#31B464);
-  rect(0,750,1000,250);
+  if (rButton > 500){
+    background(#000000);
+    fill(#FFFFFF);
+    ellipse(0,0,500,500);
+    fill(#31B464);
+    rect(0,750,1000,250);
+  } else{
+    background(#00E7ED);
+    fill(#FFEB08);
+    ellipse(0,0,500,500);
+    fill(#31B464);
+    rect(0,750,1000,250);
+  }
   //background
   fill(#816B40);
   ellipse(500,1000,600,1000);
@@ -38,7 +52,7 @@ void draw()
   //fill(#3E3324);
   rect(480,460,40,40);
   //nose
-  if (mousePressed == true){
+  if (rButton > 500){
     fill(#000000);
     rect(360,300,100,10);
     rect(540,300,100,10);
