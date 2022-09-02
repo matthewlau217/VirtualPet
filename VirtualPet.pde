@@ -10,22 +10,23 @@ void setup()
 
 void draw()
 {
-  int rButton = arduino.analogRead(1);
+  int x = arduino.analogRead(5);
   noStroke();
-  if (rButton > 500){
-    background(#000000);
+  background(0-0.6*x,231-0.6*x,237-0.6*x);
+  if (x >= 250) {
     fill(#FFFFFF);
-    ellipse(0,0,500,500);
-    fill(#31B464);
-    rect(0,750,1000,250);
-  } else{
-    background(#00E7ED);
+    ellipse(2.5*x,0,500,500);
+  } else {
     fill(#FFEB08);
-    ellipse(0,0,500,500);
-    fill(#31B464);
-    rect(0,750,1000,250);
+    ellipse(2.5*x,0,500,500);
   }
+  fill(#31B464);
+  rect(0,750,1000,250);
   //background
+  fill(#523F1B);
+  rotate((float)x/500);
+  ellipse(775,1000,100,750);
+  //tail
   fill(#816B40);
   ellipse(500,1000,600,1000);
   //body
@@ -52,12 +53,11 @@ void draw()
   //fill(#3E3324);
   rect(480,460,40,40);
   //nose
-  if (rButton > 500){
+  if (x >= 250) {
     fill(#000000);
     rect(360,300,100,10);
     rect(540,300,100,10);
-  }
-  else{
+  } else {
     fill(#000000);
     ellipse(410,300,75,100);
     ellipse(590,300,75,100);
