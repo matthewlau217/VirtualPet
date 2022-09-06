@@ -5,13 +5,14 @@ Arduino arduino;
 void setup()
 {
   size (1000,1000);
-  arduino = new Arduino(this, Arduino.list()[1], 57600);
+  arduino = new Arduino(this, Arduino.list()[0], 57600);
 }
 
 void draw()
 {
   int x = arduino.analogRead(5);
   int y = arduino.analogRead(6);
+  int z = arduino.analogRead(7);
   noStroke();
   background(0-0.6*x,231-0.6*x,237-0.6*x);
   if (x >= 250) {
@@ -24,10 +25,6 @@ void draw()
   fill(#31B464);
   rect(0,750,1000,250);
   //background
-  fill(#523F1B);
-  rotate((float)x/500);
-  ellipse(775,1000,100,750);
-  //tail
   fill(#816B40);
   ellipse(500,1000,600,1000);
   //body
@@ -65,7 +62,19 @@ void draw()
   rect(400,500,20,20);
   rect(580,500,20,20);
   //mouth
-  if (x >= 250 || y > 500) {
+  if (y > 500) {
+    fill(#FFFF00);
+    rect(390,280,40,40);
+    triangle(390,280,430,280,410,200);
+    triangle(390,320,430,320,410,400);
+    triangle(390,280,390,320,310,300);
+    triangle(430,320,430,280,510,300);
+    rect(570,280,40,40);
+    triangle(610,280,570,280,590,200);
+    triangle(610,320,570,320,590,400);
+    triangle(610,280,610,320,690,300);
+    triangle(570,320,570,280,490,300);
+  } else if (x >= 250) {
     fill(#000000);
     rect(360,300,100,10);
     rect(540,300,100,10);
@@ -78,5 +87,10 @@ void draw()
     ellipse(580,280,20,20);
   }
   //eyes
-  System.out.println(y);
+  fill(#523F1B);
+  translate(850,1000);
+  rotate((float)x/500);
+  ellipse(0,0,100,750);
+  //tail
+  System.out.println(z);
 }
