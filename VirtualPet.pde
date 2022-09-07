@@ -1,18 +1,23 @@
 import processing.serial.*;
 import cc.arduino.*;
+import java.lang.Math;
 Arduino arduino;
 
 void setup()
 {
   size (1000,1000);
   arduino = new Arduino(this, Arduino.list()[0], 57600);
+  
 }
-
+int i = 0;
 void draw()
 {
   int x = arduino.analogRead(5);
   int y = arduino.analogRead(6);
-  int z = arduino.analogRead(7);
+  int z = arduino.analogRead(1);
+  int nowIKnowMyABCsNextTimeWontYouSingWithMeee = (int)(Math.random() * 651);
+  int lmfao = (int)(Math.random() * 1001);
+  System.out.println(nowIKnowMyABCsNextTimeWontYouSingWithMeee);
   noStroke();
   background(0-0.6*x,231-0.6*x,237-0.6*x);
   if (x >= 250) {
@@ -25,6 +30,18 @@ void draw()
   fill(#31B464);
   rect(0,750,1000,250);
   //background
+  rect(nowIKnowMyABCsNextTimeWontYouSingWithMeee,
+  //stars
+  if (z >= 500) {
+    translate(500,500);
+    i++;
+    rotate((float)i/5);
+    translate(-500,-500);
+  }
+  if (z<500){
+    i=0;
+  }
+  //rButton
   fill(#816B40);
   ellipse(500,1000,600,1000);
   //body
@@ -89,8 +106,8 @@ void draw()
   //eyes
   fill(#523F1B);
   translate(850,1000);
-  rotate((float)x/500);
+  rotate((float)x/2000);
   ellipse(0,0,100,750);
   //tail
-  System.out.println(z);
+  //System.out.println(z);
 }
