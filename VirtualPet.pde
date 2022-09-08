@@ -6,7 +6,7 @@ Arduino arduino;
 void setup()
 {
   size (1000,1000);
-  arduino = new Arduino(this, Arduino.list()[0], 57600);
+  arduino = new Arduino(this, Arduino.list()[1], 57600);
   
 }
 int i = 0;
@@ -15,14 +15,20 @@ void draw()
   int x = arduino.analogRead(5);
   int y = arduino.analogRead(6);
   int z = arduino.analogRead(1);
-  int nowIKnowMyABCsNextTimeWontYouSingWithMeee = (int)(Math.random() * 651);
-  int lmfao = (int)(Math.random() * 1001);
+  int nowIKnowMyABCsNextTimeWontYouSingWithMeee = (int)(Math.random() * 1001);
+  int lmfao = (int)(Math.random() * 701);
   System.out.println(nowIKnowMyABCsNextTimeWontYouSingWithMeee);
   noStroke();
   background(0-0.6*x,231-0.6*x,237-0.6*x);
   if (x >= 250) {
     fill(#FFFFFF);
     ellipse(2.5*x,0,500,500);
+    fill(#FFFF00);
+    rect(nowIKnowMyABCsNextTimeWontYouSingWithMeee,lmfao,20,20);
+    triangle(nowIKnowMyABCsNextTimeWontYouSingWithMeee,lmfao,nowIKnowMyABCsNextTimeWontYouSingWithMeee + 20,lmfao,nowIKnowMyABCsNextTimeWontYouSingWithMeee + 10,lmfao - 30);
+    triangle(nowIKnowMyABCsNextTimeWontYouSingWithMeee,lmfao,nowIKnowMyABCsNextTimeWontYouSingWithMeee,lmfao + 20,nowIKnowMyABCsNextTimeWontYouSingWithMeee - 30,lmfao + 10);
+    triangle(nowIKnowMyABCsNextTimeWontYouSingWithMeee,lmfao + 20,nowIKnowMyABCsNextTimeWontYouSingWithMeee + 20,lmfao + 20,nowIKnowMyABCsNextTimeWontYouSingWithMeee + 10,lmfao + 50);
+    triangle(nowIKnowMyABCsNextTimeWontYouSingWithMeee + 20,lmfao + 20,nowIKnowMyABCsNextTimeWontYouSingWithMeee + 20,lmfao,nowIKnowMyABCsNextTimeWontYouSingWithMeee + 50,lmfao + 10);
   } else {
     fill(#FFEB08);
     ellipse(2.5*x,0,500,500);
@@ -30,8 +36,6 @@ void draw()
   fill(#31B464);
   rect(0,750,1000,250);
   //background
-  rect(nowIKnowMyABCsNextTimeWontYouSingWithMeee,
-  //stars
   if (z >= 500) {
     translate(500,500);
     i++;
