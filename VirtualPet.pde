@@ -7,16 +7,29 @@ void setup()
 {
   size (1000,1000);
   arduino = new Arduino(this, Arduino.list()[1], 57600);
+  frameRate(60);
   
 }
 int i = 0;
+int nowIKnowMyABCsNextTimeWontYouSingWithMeee;
+int lmfao;
+int delay = 0;
+  
 void draw()
 {
   int x = arduino.analogRead(5);
   int y = arduino.analogRead(6);
   int z = arduino.analogRead(1);
-  int nowIKnowMyABCsNextTimeWontYouSingWithMeee = (int)(Math.random() * 1001);
-  int lmfao = (int)(Math.random() * 701);
+  
+  
+  if (delay > 30) {
+    nowIKnowMyABCsNextTimeWontYouSingWithMeee = (int)(Math.random() * 1001);
+    lmfao = (int)(Math.random() * 701);
+    delay = 0;
+  }
+  delay++;
+  
+  x = 8 * x;
   System.out.println(nowIKnowMyABCsNextTimeWontYouSingWithMeee);
   noStroke();
   background(0-0.6*x,231-0.6*x,237-0.6*x);
